@@ -1,0 +1,72 @@
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td,input{margin:0;padding:0;}
+
+/*input,button,select,textarea,:focus{outline:none;font-family:"Microsoft YaHei";}*/
+
+.f12{font-size:12px !important;}
+.f14{font-size:14px;}
+.f16{font-size:16px !important;}
+
+.gray{color:#999;}
+.red{color:#f53b09;}
+.blue{color:#006dc2;}
+.green{color:green;}
+.orange{color:#ff7300 !important;}
+.colorS{color:#333 !important;}
+.colorL{color:#666 !important;}
+.colorJ{color:#999 !important;}
+
+.fl{float:left; display:inline;}
+.fr{float:right; display:inline;}
+
+.txl{text-align:left;}
+.txc{text-align:center;}
+.txr{text-align:right;}
+
+.none{display:none;}
+
+/*Font Icon*/
+@font-face {font-family: 'iconfont';
+    src: url('../font/iconfont.eot'); /* IE9*/
+    src: url('../font/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../font/iconfont.woff') format('woff'), /* chromeã€firefox */
+    url('../font/iconfont.ttf') format('truetype'), /* chromeã€firefoxã€operaã€Safari, Android, iOS 4.2+*/
+    url('../font/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+.iconfont{font-family:"iconfont" !important; font-size:18px;font-style:normal;float:left; -webkit-font-smoothing: antialiased; /*-webkit-text-stroke-width: 0.2px;*/ -moz-osx-font-smoothing: grayscale; }
+
+
+
+.it-act4-head {width: 100%;height:80px;overflow: hidden;*overflow:inherit;}
+.it-act4-head a {position: relative; left: 50%; top: 0; margin-left: -960px;}
+.it-act4-head i {position: absolute; left: 50%; top:10px; margin-left:658px; width:20px; height:20px;cursor: crosshair;background:url(#);border: 1px solid black;}
+
+.header {z-index:1002;color:#949494;font-size:14px;position:relative;zoom:1;}
+
+.head-top {border-bottom:1px solid #eee;color:#999;background:#F8F8F8;line-height: 34px;height: 34px;}
+.head-top a{color:#666; margin: 0 5px;}
+.head-top a:hover{color:#ff7300;}
+.head-top p{display: inline-block; *display: inline;}
+/*.head-top>div>p{display: none;}*/
+/*.head-top>div>i{color: #eaeaea;}*/
+.head-top p img{float: right; margin: 3px 0 0 5px; *display: none;}
+.head-top span{margin: 0 10px;}
+.head-top dl{padding: 0 5px; position: relative; color: #666; display: inline-block; *display: none;}
+.head-top dl.on{background: #fff;}
+.head-top dd{position: absolute; background: #fff;padding: 10px 20px 15px; top: 34px;right: 0;z-index: 9; width: 267px; box-shadow: 0 5px 10px #ddd; display: none;}
+
+.hwtrip-cont{width:1200px;margin-left:auto;margin-right:auto;font-family:microsoft yahei;font-size:14px;}
+
+.head-book dd i{font-size: 24px; margin-right: 5px;}
+.head-book input{width: 196px; height: 34px; line-height: 34px; border: 1px solid #eaeaea; float: left; margin-right: -1px; text-indent: 12px; color: #999;}
+.head-book button{width: 69px; height: 36px; font-size: 14px;}
+.head-book .head-hint{float: left; color: #ff7300; line-height: 20px; margin-top: 10px; display: none;}
+
+.head-wechat.on .iconfont{color: #37c81b !important;}
+.head-wechat dd{text-align: left; font-size: 13px; line-height: 24px;}
+.head-wechat img{width: 76px; height: 76px;}
+.head-wechat h3{margin-top: 15px;}
+.head-wechat h4{width: 100%; height: 1px; background: #f1f1f1; margin: 20px 0 3px;}
+
+.btn-orange{background:#ff7300;border-radius:2px;color:#fff;}/*btn color*/
+.btn-orange:hover{background:#f60;color:#fff;text-decoration:none;}
