@@ -25,6 +25,9 @@ html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pr
 
 .none{display:none;}
 
+.clearfix{zoom:1;}
+.clearfix:after{clear:both;content:".";display:block;height:0;line-height:0;visibility:hidden;}
+
 /*Font Icon*/
 @font-face {font-family: 'iconfont';
     src: url('../font/iconfont.eot'); /* IE9*/
@@ -70,3 +73,37 @@ html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pr
 
 .btn-orange{background:#ff7300;border-radius:2px;color:#fff;}/*btn color*/
 .btn-orange:hover{background:#f60;color:#fff;text-decoration:none;}
+
+.header-middle .hwtrip-cont{position:relative;height:114px;zoom:1;}
+.header-middle .logo{position:absolute;left:0;top:26px;}
+.header-middle .i-adv{position:absolute;top:34px;left:690px;width:184px;height:40px;background-position:0 -815px;overflow:hidden;zoom:1;}
+.header-middle .i-adv a{float:left;width:50%;overflow:hidden;height:100%;line-height:999em;}
+.header-middle .i-adv .i-tra:hover{background-position:0 -860px;*width:92px;}
+.header-middle .i-adv .i-ser:hover{background-position:-90px -860px;*width:92px;}
+
+.header-middle .search{position:absolute;left:240px;top:36px;_width:428px;}
+.re-form{border: 0 none;}
+.re-form .in-t{float:left;border:2px solid #A4CBFF;border-right:0;height:24px;line-height:24px;width:350px;vertical-align:middle;padding:6px 8px;color:#999;font-size:14px;border-radius:2px 0 0 2px;-moz-transition:all 300ms linear 0ms;-webkit-transition:all 300ms linear 0ms;-o-transition:all 300ms linear 0ms;transition:all 300ms linear 0ms;}
+.re-form .in-t:focus{border-right:0;color:#333;box-shadow:inset 2px 2px 3px #d2d2d2;-moz-box-shadow:inset 2px 2px 3px #d2d2d2;-webkit-box-shadow:inset 2px 2px 3px #d2d2d2;}
+.re-form .in-b{float:left;height:40px;cursor:pointer;background:url(../img/search-ico.png) no-repeat 50% 50% #A4CBFF;border:0;font:16px/38px microsoft yahei;color:#fff;border:0;text-align:center;width:60px;border-radius:0 3px 3px 0;}
+
+.header-middle .phone{position:absolute;right:0;top:24px;color:#888;text-align:right;color:#949494;}
+.header-middle .phone .phone-num{padding-left:30px;color:#ff7300;font:bold 28px/40px Georgia;}
+.header-middle .phone .phone-num .i-hot-new{width:25px;height:24px;position:absolute;left:0;top:12px;background-position:-231px -191px;}
+
+.i-hot-new{background:url(../img/i-hot-new.png) no-repeat -2000em 0;}
+
+.navigation{border-bottom:3px solid #4F9AFF;position:relative;zoom:1;}
+.navigation .other-info{float:right;margin-top:-27px;font-size:0;}
+.navigation .other-info a{display:inline-block;vertical-align:top;font-size:14px;border-radius:2px;padding:2px 12px;color:#fff;}
+.navigation .other-info a:hover{text-decoration:none;color:#fff;}
+.navigation .other-info .for-car{background-color:#ff7300;}
+.navigation .other-info .for-car:hover{background-color:#FF841F;}
+.navigation .other-info .for-visa{background-color:#4F9AFF;padding:2px 16px;margin-left:7px;}
+.navigation .other-info .for-visa:hover{background-color:#3089FF;}
+.navigation .i-sub-down{display:inline-block;width:8px;height:6px;background-position:-299px -728px;margin-left:8px;vertical-align:3px;*vertical-align:6px;_font-size:0;}
+.navigation .i-sub-up{background-position:-308px -728px;}
+.navigation li .pro{position:relative;zoom:1;}
+
+
+
