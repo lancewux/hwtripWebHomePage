@@ -13,6 +13,19 @@ var addEvent = function(elem, type, handler) {
 	addEvent(elem, type, handler);
 }
 
+var addEventWithFilter = function(elems, type, filter, handler) {
+	if(window.addEventListener) {
+		addEvent = function(elems, type, handler) {
+			elem.addEventListener(type, handler);
+		}
+	} else {
+		addEvent = function(elem, type, handler) {
+			addEvent = elem.attachEvent('on' + type, handler);
+		}
+	}
+	addEvent(elem, type, handler);
+}
+
 addEvent(document.querySelector('dl.head-book>dt'), 'mouseover', function() {
 	console.log('in');
 	document.querySelector('dl.head-book>dd').style.display = 'inline-block';
@@ -31,4 +44,17 @@ addEvent(document.querySelector('dl.head-wechat>dt'), 'mouseover', function() {
 addEvent(document.querySelector('dl.head-wechat'), 'mouseout', function() {
 	console.log('out');
 	document.querySelector('dl.head-wechat>dd').style.display = 'none';
+});
+
+addEvent(document.querySelector('.destination'), 'mouseover', function(event) {
+	// console.log('ss');
+	var e = event || window.event;
+	var target = e.target || e.srcElement;
+	var classStr = target.getAttribute('class');
+	if (classStr && /desti-dl/.test(classStr)) {
+		console.log('ggg');
+		console.log(target);
+	}
+	// console.log(target.getAttribute('class'));
+	// document.querySelector('dl.head-book>dd').style.display = 'inline-block';
 });
