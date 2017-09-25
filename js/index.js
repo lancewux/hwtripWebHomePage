@@ -103,6 +103,33 @@ hover(document.querySelector('#js-a-youlun'), function(e) {
 	slideUp(this.querySelector('.sub'), 100);
 });
 
-// slideDown();
+// // slideDown();
 
+//     // 焦点图
+//     $('.flexslider').flexslider({
+//         directionNav: false,
+//         pauseOnAction: false,
+//         pauseOnHover: true,
+//         animationSpeed: 300,
+//         start: function() {
+//             $('.slides li').each(function(k, v) {
+//                 var navText = $(this).find('img').attr('alt');
+//                 $('.flex-control-nav li').eq(k).find('a').text(navText);
+//             });
+//             $('.flex-control-nav li').hover(function() {
+//                 $(this).parent().parent().flexslider($(this).index());
+//             });
+//         }
+//     });
 
+//     // 焦点图右侧运营位
+//     $('.activity-list').find('li').mouseover(function() {
+//         $(this).addClass('cur').siblings('li').removeClass('cur');
+//         $(this).find('img').stop().animate({
+//             top: '-101px'
+//         }, 200);
+//         $(this).siblings('li').find('img').stop().animate({
+//             top: 0
+//         }, 200);
+//     });
+// });
