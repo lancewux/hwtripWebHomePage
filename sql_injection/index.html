@@ -1,0 +1,135 @@
+<!doctype html>
+<head>
+	<title>sql injection</title>
+	<style type="text/css">
+		.main {
+			width: 600px;
+			height:300px;
+			margin: 0px auto;
+			margin-top: 100px;
+			border: solid 1px green;
+			border-radius: 50px;
+			box-shadow:10px 10px 5px gray;
+			padding-top: 80px;
+			animation: bordercolor 2s infinite;
+			-webkit-animation: bordercolor 2s infinite; /* Safari and Chrome */
+		}
+		@keyframes bordercolor {
+			0% {border-color: green;}
+			25% {border-color: blue;}
+			50% {border-color: black;}
+			75% {border-color: purple;}
+			100% {border-color: green;}
+		}
+		@-webkit-keyframes bordercolor {
+			0% {border-color: green;}
+			25% {border-color: blue;}
+			50% {border-color: black;}
+			75% {border-color: purple;}
+			100% {border-color: green;}
+		}
+		.ipt {
+			width: 200px;
+			height: 27px;
+			border-radius: 5px;
+			box-shadow: 2px 2px 1px gray;
+			margin-top: 20px;
+		}
+		.label {
+			font-weight: bold;
+			font-size: 16px;
+			font-family: 'Microsoft YaHei';
+		}
+		.button {
+			width: 120px;
+			height: 30px;
+			border-radius: 5px;
+			font: bold 16px 'Microsoft YaHei';
+			text-shadow: 1px 1px 1px #FF0000;
+			margin-top: 60px;
+			transition: transform 1s;
+			-webkit-transition: -webkit-transform 1s;
+		}
+		.button:hover {
+			transform: rotate(360deg);
+			-webkit-transform: rotate(360deg);
+		}
+	</style>
+</head>
+<body>
+	<div class="main" align="center">
+		<label for="username" class="label">username:</label>
+		<input type="text" id="username" class="ipt" placeholder="enter your username" />
+		<br/>
+		<label for="password" class="label">password:</label>
+		<input type="text" id="password" class="ipt" placeholder="enter your password"/>
+		<br/>
+		<input type="button" class="button" id="button" value="submit"/>
+	</div>
+	<script>
+		var addEvent = function(el, type, handler) {
+			if(window.addEventListener) {
+				addEvent = el.addEventListener(type, handler);
+			} else {
+				addEvent = el.attachEvent('on' + type, handler);
+			}
+		};
+		var createXmlHttp = function() {
+			var xmlHttp = null;
+			if(window.XMLHttpRequest) {
+				xmlHttp = new XMLHttpRequest();
+			} else {
+				xmlHttp = new ActiveXObject('Microsoft.XMLHTTP');
+			}
+			return xmlHttp;
+		}
+		var ajax = function(url, method, data, suc, err) {
+			var xmlHttp = createXmlHttp();
+			// console.log(xmlHttp);
+			if(xmlHttp) {
+				xmlHttp.onreadystatechange = function() {
+					if(xmlHttp.readyState == 4) {
+						if(xmlHttp.status == 200) {
+							var resData = xmlHttp.responseText;
+							if(xmlHttp.getResponseHeader('Content-Type').toLowerCase() === 'application/json') {
+								resData = JSON.parse(resData);
+								if (resData.length) {
+									suc();
+								} else {
+									err('用户名或密码错误');
+								}
+							}
+							console.log(resData);
+						} else {
+							err('系统错误');
+						}
+					}
+				};
+				try {
+					xmlHttp.open(method, url);
+					xmlHttp.setRequestHeader("Content-Type","application/json"); //post 方式要设置这个头部
+					xmlHttp.send(data);
+				} catch(e) {
+					err('网络连接错误');
+				}
+				
+			}
+		}
+
+		addEvent(document.getElementById('button'), 'click', function(event) {
+			var name = document.querySelector('#username').value;
+			var password = document.querySelector('#password').value;
+			var data = {
+				'username': name,
+				'password': password
+			};
+			data = JSON.stringify(data);
+			// console.log(data);
+			ajax('http://192.168.204.49:3034', 'post', data, function() {
+				alert('登录成功');
+			}, function(msg) {
+				alert('登录失败:' + msg);
+			});
+		});
+	</script>
+</body>
